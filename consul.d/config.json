@@ -1,0 +1,14 @@
+{
+  "datacenter": "dc1",
+  "data_dir": "/home/ec2-user/nomad/consul.d",
+  "log_level": "INFO",
+  "server": true,
+  "bootstrap_expect": 3,
+  "client_addr": "0.0.0.0",
+  "bind_addr": "{{GetInterfaceIP \"eth0\"}}",
+  "domain": "consul",
+  "enable_script_checks": true,
+  "encrypt": "5W8cYmV7oS5o+IQqeLX3H1L3QLnipwJbMFvOdiYd2gg=",
+  "retry_join": ["172.31.42.117", "172.31.43.76", "172.31.39.27"],
+  "ui": true
+}
