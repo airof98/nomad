@@ -3,6 +3,7 @@
 ```
 nomad agent -config=./nomad.d
 consul agent -config-dir=./consul.d
+sudo service docker start
 
 ```
 
