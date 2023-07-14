@@ -18,3 +18,24 @@ http://localhost:9999/http-echo
 ## docs
 https://www.nomadproject.io/guides/install/quickstart/index.html   
 
+
+## ec2 install
+```
+sudo yum install git tmux
+
+sudo yum install yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+sudo yum install nomad
+sudo yum -y install consul
+
+wget https://go.dev/dl/go1.20.6.linux-amd64.tar.gz
+tar xvzf go1.20.6.linux-amd64.tar.gz
+# add gopath, go/bin gopath/bin
+go install github.com/fabiolb/fabio@latest
+
+sudo yum install docker -y
+docker -v
+sudo service docker start
+sudo usermod -aG docker ec2-user
+```
+
