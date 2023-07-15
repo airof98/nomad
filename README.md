@@ -3,7 +3,7 @@
 ```
 nomad agent -config=./nomad.d
 consul agent -config-dir=./consul.d
-sudo service docker start
+fabio -proxy.addr=":9999;proto=http,:8888;proto=grpc"
 
 ```
 
@@ -31,11 +31,16 @@ sudo yum -y install consul
 wget https://go.dev/dl/go1.20.6.linux-amd64.tar.gz
 tar xvzf go1.20.6.linux-amd64.tar.gz
 # add gopath, go/bin gopath/bin
+export GOPATH=/home/ec2-user/gopath
+export PATH="$PATH:/home/ec2-user/go/bin:$GOPATH/bin"
+
 go install github.com/fabiolb/fabio@latest
 
 sudo yum install docker -y
 docker -v
 sudo service docker start
 sudo usermod -aG docker ec2-user
+
+git clone https://github.com/airof98/nomad.git
 ```
 
